@@ -1,0 +1,41 @@
+[
+    {
+        "id" :1,
+        "name" : "Story book",
+        "description": "This is a story book",
+        "price" :0,
+        "category" : "Free",
+        "image" : "https://img.freepik.com/free-vector/focused-tiny-people-reading-books_74855-5836.jpg?t=st=1723280295~exp=1723283895~hmac=554f6b6c0219bb50b12c9365a9480c5be3b2d6bb63a2d302d8738b1b5cf3844f&w=900"
+    },
+    {
+        "id" :2,
+        "name" : "Story book",
+        "description": "This is a story book",
+        "price" :0,
+        "category" : "Free",
+        "image" : "https://img.freepik.com/free-vector/focused-tiny-people-reading-books_74855-5836.jpg?t=st=1723280295~exp=1723283895~hmac=554f6b6c0219bb50b12c9365a9480c5be3b2d6bb63a2d302d8738b1b5cf3844f&w=900"
+    },
+    {
+        "id" :3,
+        "name" : "Story book",
+        "description": "This is a story book",
+        "price" :0,
+        "category" : "Free",
+        "image" : "https://img.freepik.com/free-vector/focused-tiny-people-reading-books_74855-5836.jpg?t=st=1723280295~exp=1723283895~hmac=554f6b6c0219bb50b12c9365a9480c5be3b2d6bb63a2d302d8738b1b5cf3844f&w=900"
+    },
+    {
+        "id" :4,
+        "name" : "Story book",
+        "description": "This is a story book",
+        "price" :0,
+        "category" : "Free",
+        "image" : "https://img.freepik.com/free-vector/focused-tiny-people-reading-books_74855-5836.jpg?t=st=1723280295~exp=1723283895~hmac=554f6b6c0219bb50b12c9365a9480c5be3b2d6bb63a2d302d8738b1b5cf3844f&w=900"
+    },{
+        "id" :5,
+        "name" : "Story book",
+        "description": "This is a story book",
+        "price" :0,
+        "category" : "Free",
+        "image" : "https://img.freepik.com/free-vector/focused-tiny-people-reading-books_74855-5836.jpg?t=st=1723280295~exp=1723283895~hmac=554f6b6c0219bb50b12c9365a9480c5be3b2d6bb63a2d302d8738b1b5cf3844f&w=900"
+    }
+]
