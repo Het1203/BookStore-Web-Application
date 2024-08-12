@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useForm } from "react-hook-form";
+import { set, useForm } from "react-hook-form";
 import axios from 'axios';
 import { toast } from 'react-hot-toast';
 
@@ -28,14 +28,17 @@ function Login() {
                     console.log(res.data);
                     if (res.data) {
                         toast.success('User Logged In Successfully!');
-
                         closeModal();
+                        setTimeout(() => {
+                            window.location.reload();
+                            localStorage.setItem('users', JSON.stringify(res.data.user));
+                        }, 3000);
                     }
-                    localStorage.setItem('users', JSON.stringify(res.data.user));
                 }).catch((err) => {
                     if (err.response) {
                         console.log(err);
                         toast.error('Error: ' + err.response.data.message);
+                        setTimeout(() => { }, 3000);
                     }
                 });
         } else {
@@ -50,13 +53,16 @@ function Login() {
                     console.log(res.data);
                     if (res.data) {
                         toast.success('User SignUp Successfully!');
-                        closeModal();
+                        // closeModal();
+                        setTimeout(() => {
+                            window.location.reload();
+                        }, 3000);
                     }
-                    localStorage.setItem('users', JSON.stringify(res.data.user));
                 }).catch((err) => {
                     if (err.response) {
                         console.log(err);
                         toast.error('Error: ' + err.response.data.message);
+                        setTimeout(() => { }, 3000);
                     }
                 });
         }

@@ -1,7 +1,11 @@
 import React from 'react'
 import Login from './Login';
+import Logout from './Logout';
+import { useAuth } from '../context/AuthProvider';
 
 export default function Navbar() {
+
+    const [authUser, setAuthUser] = useAuth();
 
     // const [theme, setTheme] = React.useState(localStorage.getItem('theme') ? localStorage.getItem('theme') : 'light');
     // const element = document.documentElement;
@@ -117,10 +121,11 @@ export default function Navbar() {
                             </label>
                         </div> */}
 
-                        <div>
+                        {authUser ? (<Logout />) : (<div>
                             <a className="bg-black text-white px-3.5 py-1.5 cursor-pointer rounded-md hover:bg-slate-800 duration-300" onClick={() => document.getElementById("my_modal_3").showModal()} >Login</a>
                             <Login />
-                        </div>
+                        </div>)
+                        }
                     </div>
                 </div>
             </div>
