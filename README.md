@@ -15,7 +15,17 @@ The BookStore Web Application is a modern, responsive web application designed t
 
 ## Technologies Used
 
-- **Frontend**: React, React Router, Tailwind CSS
-- **Form Handling**: React Hook Form
-- **State Management**: React useState, useEffect
-- **Styling**: Tailwind CSS for responsive and modern design
+### Frontend
+- **React**: For building the user interface.
+- **React Router**: For handling navigation.
+- **Tailwind CSS**: For responsive and modern design.
+- **React Hook Form**: For form handling and validation.
+- **State Management**: Using React's `useState` and `useEffect` hooks.
+
+### Backend
+- **Node.js**: For the server-side runtime environment.
+- **Express.js**: For building the RESTful API.
+- **MongoDB**: For the database to store book and user information.
+- **Mongoose**: For object data modeling (ODM) with MongoDB.
+- **JWT**: For authentication and authorization.
+- **Bcrypt**: For hashing passwords.
