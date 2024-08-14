@@ -27,5 +27,4 @@ The BookStore Web Application is a modern, responsive web application designed t
 - **Express.js**: For building the RESTful API.
 - **MongoDB**: For the database to store book and user information.
 - **Mongoose**: For object data modeling (ODM) with MongoDB.
-- **JWT**: For authentication and authorization.
 - **Bcrypt**: For hashing passwords.
