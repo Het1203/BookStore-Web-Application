@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
+import axios from 'axios';
 
 function Contact() {
     const {
@@ -16,12 +17,15 @@ function Contact() {
         setLoading(true);
         setMessage("");
         try {
-            // Simulate form submission
-            await new Promise((resolve) => setTimeout(resolve, 2000));
-            setMessage("Your message has been sent successfully!");
+            const res = await axios.post("http://localhost:4001/contact", data);
+            console.log(res.data);
+            if (res.data) {
+                setMessage('Your message has been sent successfully!');
+                reset();
+            }
+        } catch (err) {
+            setMessage("There was an error sending your message. Please try again. " + err);
             reset();
-        } catch (error) {
-            setMessage("There was an error sending your message. Please try again.");
         } finally {
             setLoading(false);
         }
