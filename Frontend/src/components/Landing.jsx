@@ -3,13 +3,12 @@ import bookLandingPage from '../../public/bookLandingPage.jpg';
 import { toast } from 'react-hot-toast';
 
 function Landing() {
-    // Step 1: Add state for email
+
     const [email, setEmail] = useState('');
 
-    // Step 2: Handle form submission
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Perform an action with the email, e.g., send to backend or display a message
+
         console.log('Email submitted:', email);
         toast.success('Email has been sent to ' + email);
         setEmail('');
@@ -28,7 +27,7 @@ function Landing() {
                                 Our bookstore is dedicated to providing a haven for <span className="text-pink-500">book lovers</span>.</p>
                         </div>
                     </div>
-                    {/* Step 3: Update JSX to include form */}
+
                     <form onSubmit={handleSubmit}>
                         <label className="input input-bordered flex mt-10 items-center gap-2">
                             <svg

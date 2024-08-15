@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { set, useForm } from "react-hook-form";
+import React, { useState, useEffect } from 'react';
+import { useForm } from "react-hook-form";
 import axios from 'axios';
 import { toast } from 'react-hot-toast';
 
@@ -71,6 +71,10 @@ function Login() {
     const closeModal = () => {
         document.getElementById('my_modal_3').close();
     };
+
+    // useEffect(() => {
+    //     document.getElementById('my_modal_3').showModal();
+    // }, []);
 
     return (
         <div>
