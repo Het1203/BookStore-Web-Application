@@ -115,7 +115,7 @@ function Login() {
                                 </div>
 
                                 <div className="mt-8 text-center">
-                                    <button className="bg-pink-600 hover:bg-pink-700 hover:text-black btn text-white px-10">Login</button>
+                                    <button className="bg-pink-600 hover:bg-pink-700 hover:text-black btn text-white px-10">LOGIN</button>
                                 </div>
 
                                 <div className="mt-5 text-center">
@@ -147,7 +147,7 @@ function Login() {
                                 </div>
 
                                 <div className="mt-8 text-center">
-                                    <button className="bg-pink-600 hover:bg-pink-700 hover:text-black btn text-white px-10">Register</button>
+                                    <button className="bg-pink-600 hover:bg-pink-700 hover:text-black btn text-white px-10">REGISTER</button>
                                 </div>
 
                                 <div className="mt-5 text-center">
