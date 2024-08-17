@@ -2,9 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { useForm } from "react-hook-form";
 import axios from 'axios';
 import { toast } from 'react-hot-toast';
+import { useAuth } from '../context/AuthProvider';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 function Login() {
     const [isLogin, setIsLogin] = useState(true);
+    const [authUser, setAuthUser] = useAuth();
+    const location = useLocation();
+    const navigate = useNavigate();
 
     const toggleForm = () => {
         setIsLogin(!isLogin);
@@ -28,11 +33,12 @@ function Login() {
                     console.log(res.data);
                     if (res.data) {
                         toast.success('User Logged In Successfully!');
+                        setAuthUser(res.data.user);
                         closeModal();
                         setTimeout(() => {
                             window.location.reload();
                             localStorage.setItem('users', JSON.stringify(res.data.user));
-                        }, 3000);
+                        }, 1000);
                     }
                 }).catch((err) => {
                     if (err.response) {
@@ -72,9 +78,14 @@ function Login() {
         document.getElementById('my_modal_3').close();
     };
 
-    // useEffect(() => {
-    //     document.getElementById('my_modal_3').showModal();
-    // }, []);
+    useEffect(() => {
+        if (location.pathname === '/books' && !authUser) {
+            document.getElementById('my_modal_3').showModal();
+            navigate('/login');
+        } else if (location.pathname === '/login') {
+            document.getElementById('my_modal_3').showModal();
+        }
+    }, [location, authUser, navigate]);
 
     return (
         <div>
@@ -152,65 +163,3 @@ function Login() {
 }
 
 export default Login;
-
-
-
-
-
-
-
-
-
-
-
-
-// import React from 'react'
-
-// function Login() {
-//     return (
-//         <div>
-//             <dialog id="my_modal_3" className="modal">
-//                 <div className="modal-box">
-//                     <form method="dialog">
-//                         <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
-//                     </form>
-
-//                     <h3 className="font-bold text-xl text-center">Login</h3>
-
-//                    1. Email
-//                     <div className="mt-5">
-//                         <span className="text-lg">
-//                             Email:
-//                         </span>
-//                         <br />
-//                         <input type="email" className="input input-bordered w-full px-3" placeholder="Enter your email" />
-//                     </div>
-
-//                     2. Password
-//                     <div className="mt-8 mb-6">
-//                         <span className="text-lg">
-//                             Password:
-//                         </span>
-//                         <br />
-//                         <input type="text" className="input input-bordered w-full px-3" placeholder="Enter your password" />
-//                     </div>
-
-//                     3. Login Button
-//                     <div className="mt-8 text-center">
-//                         <button className="bg-pink-600 hover:bg-pink-700 hover:text-black btn text-white px-10">Login</button>
-//                     </div>
-
-//                     4. Register
-//                     <div className="mt-5 text-center">
-//                         <p>Don't have an account? <span className="underline text-blue-500 cursor-pointer">
-//                             <a href="#">Register</a>
-//                         </span> </p>
-//                     </div>
-//                 </div>
-//             </dialog>
-//         </div>
-//     )
-// }
-
-// export default Login;
-
